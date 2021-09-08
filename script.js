@@ -4,18 +4,20 @@
  * de p5 library, zodra het spel geladen is in de browser
  */
 
-var x = 50;
-var y = 50;
+var eenX = 50;
+var eenY = 50;
 
-var speedX = 10;
-var speedY = 10;
+var tweeX = 100;
+var tweeY = 100;
 
-function setup() {
-  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
+var speedEenX = 10;
+var speedEenY = 10;
+
+var speedTweeX = 5;
+var speedTweeY = 5; 
+
+function setup() {          // tekent een canvas
   createCanvas(1280, 720);
-
-  // Kleur de achtergrond blauw, zodat je het kunt zien
-  
 }
 
 
@@ -24,33 +26,64 @@ function setup() {
  * de code in deze functie wordt meerdere keren per seconde
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
+
 function draw() {
   background(153, 153, 255);
   // stel vulkleur in
-  fill(255, 255, 255);
+  fill(0, 0, 0);
 
   // teken een cirkel
-  ellipse(x,y,80,80);
+  ellipse(eenX,eenY,80,80);
 
-  x = x + speedX;
-  y = y + speedY;
+  eenX = eenX + speedEenX; // zorgt dat bal beweegt
+  eenY = eenY + speedEenY;
   
 if (y===680){
-  speedY = speedY * -1
+  speedEenY = speedEenY * -1
 }
 
 if (x===1240){
-  speedX = speedX * -1
+  speeEenX = speedEenX * -1
 }
 
 if(y===40){
-  speedY= speedY * -1
+  speedEenY= speedEenY * -1
 }
 
 if(x===40){
-  speedX = speedX * -1
+  speedEenX = speedEenX * -1
+}
+
+background(153, 153, 255);
+// stel vulkleur in
+fill(0, 0, 0);
+
+  // teken een cirkel
+  ellipse(tweeX,tweeY,80,80);
+
+  tweeX = tweeX + speedTweeX; // zorgt dat bal beweegt
+  tweeY = tweeY + speedTweeY;
+  
+if (y===680){
+  speedTweeY = speedTweeY * -1
+}
+
+if (x===1240){
+  speedTweeX = speedTweeX * -1
+}
+
+if(y===40){
+  speedTweeY= speedTweeY * -1
+}
+
+if(x===40){
+  speedTweeX = speedTweeX * -1
 }
 
 }
+
+
+
+  
 
  
