@@ -4,20 +4,39 @@
  * de p5 library, zodra het spel geladen is in de browser
  */
 
-var eenX = 50;
-var eenY = 50;
 
-var tweeX = 100;
-var tweeY = 100;
+// globale variabelen
+var x1 = 50;
+var y1 = 50;
+var x2 = 50;
+var y2 = 50;
+var x3 = 50;
+var y3 = 50;
+var x4 = 50;
+var y4 = 50;
+var x5 = 50;
+var y5 = 50;
 
-var speedEenX = 10;
-var speedEenY = 10;
+var speedX1 = 3;
+var speedY1 = 3;
+var speedX2 = 5;
+var speedY2 = 5;
+var speedX3 = 5;
+var speedY3 = 5;
+var speedX4 = 5;
+var speedY4 = 5;
+var speedX5 = 5;
+var speedY5 = 5;
 
-var speedTweeX = 5;
-var speedTweeY = 5; 
-
-function setup() {          // tekent een canvas
+/**
+ * setup
+ * de code in deze functie wordt één keer uitgevoerd door
+ * de p5 library, zodra het spel geladen is in de browser
+ */
+function setup() {
+  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
+
 }
 
 
@@ -28,62 +47,61 @@ function setup() {          // tekent een canvas
  */
 
 function draw() {
-  background(153, 153, 255);
+  
+  
+  // Kleur de achtergrond blauw, zodat je het kunt zien
+  background('blue');
+
   // stel vulkleur in
-  fill(0, 0, 0);
+  fill(255, 255, 255);
 
   // teken een cirkel
-  ellipse(eenX,eenY,80,80);
+  ellipse(x1, y1, 80, 80);
 
-  eenX = eenX + speedEenX; // zorgt dat bal beweegt
-  eenY = eenY + speedEenY;
-  
-if (eenY===680){
-  speedEenY = speedEenY * -1
-}
+  //positie updaten
+  x1 = x1 + speedX1;
+  y1 = y1 + speedY1;
 
-if (eenX===1240){
-  speeEenX = speedEenX * -1
-}
+  // laat stuiteren tegen de onderkant
+  if (y1 === 680) {
+    speedY1 = speedY1 * -1;
+  }
 
-if(eenY===40){
-  speedEenY= speedEenY * -1
-}
+  if (x1 === 1240){
+    speedX1 = speedX1 * -1;
+  }
 
-if(eenX===40){
-  speedEenX = speedEenX * -1
-}
+  if (y1 === 40) {
+    speedY1 = speedY1 * -1;
+  }
 
-background(153, 153, 255);
-// stel vulkleur in
-fill(255, 255, 255);
+  if (x1 === 40) {
+    speedX1 = speedX1 * -1;
+  }
 
-  // teken een cirkel
-  ellipse(tweeX,tweeY,80,80);
+  fill(0,0,0);
 
-  tweeX = tweeX + speedTweeX; // zorgt dat bal beweegt
-  tweeY = tweeY + speedTweeY;
-  
-if (tweeY===680){
-  speedTweeY = speedTweeY * -1
-}
-
-if (tweeX===1240){
-  speedTweeX = speedTweeX * -1
-}
-
-if(tweeY===40){
-  speedTweeY= speedTweeY * -1
-}
-
-if(tweeX===40){
-  speedTweeX = speedTweeX * -1
-}
-
-}
-
-
-
-  
-
+   // teken een cirkel
+   ellipse(x2, y2, 80, 80);
  
+   //positie updaten
+   x2 = x2 + speedX2;
+   y2 = y2 + speedY2;
+ 
+   // laat stuiteren tegen de onderkant
+   if (y2 === 680) {
+     speedY2 = speedY2 * -1;
+   }
+ 
+   if (x2 === 1240){
+     speedX2 = speedX2 * -1;
+   }
+ 
+   if (y2 === 40) {
+     speedY2 = speedY2 * -1;
+   }
+ 
+   if (x2 === 40) {
+     speedX2 = speedX2 * -1;
+   }
+}
